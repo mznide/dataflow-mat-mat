@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<maxCompilerManager version="2">
+<enginePart internalEngineSubproject="TransposedVec_EngineCode" isSrcBin="false" isUseDefaultSelected="false" outputLocation="/TransposedVec_EngineCode/bin" projectName="TransposedVec"/>
+<cpuPart internalCpuSubproject="TransposedVec_CPUCode"/>
+<watchedFiles/>
+</maxCompilerManager>

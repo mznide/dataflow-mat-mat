@@ -1,0 +1,48 @@
+package multiply;
+
+import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar;
+import com.maxeler.maxcompiler.v2.utils.MathUtils;
+
+class MultiplyKernel extends Kernel {
+
+	final DFEType intType = dfeUInt(32);
+	final DFEType floatType = dfeFloat(8,24);
+
+	MultiplyKernel(KernelParameters parameters, int nMax, int C) {
+		super(parameters);
+
+		final int addrBits = MathUtils.bitsToAddress(nMax+1);
+		DFEType addrType = dfeUInt(addrBits);
+
+		DFEVar n = io.scalarInput("n", addrType);
+
+		// Set up counters for 2D loop
+		CounterChain chain = control.count.makeCounterChain();
+		DFEVar b = chain.addCounter(n, 1);
+		DFEVar i = chain.addCounter(n, 1);
+		DFEVar j = chain.addCounter(C, 1); // x
+
+		DFEVar inVector = io.input("vectorInput", dfeFloat(8,24), j===0 & b === 0);
+		// Read matrix input
+		DFEVar input = io.input("matrixInput", floatType);
+
+		Memory<DFEVar> ram = mem.alloc(floatType, nMax+1);
+		ram.write(i, inVector, j===0 & b === 0);
+		DFEVar elFromRam = j===0 & b === 0 ? inVector : ram.read(i);
+
+		// At the head of the loop, we select whether to take the initial value,
+		// or the value that is being carried around the data flow cycle
+		DFEVar carriedSum = floatType.newInstance(this);
+		DFEVar sum = i === 0 ? 0.0 : carriedSum;
+		DFEVar newSum = input*elFromRam+sum;
+
+		carriedSum <== stream.offset(newSum, -C);
+		// We have a controlled output to deliver the sum at the end of each column
+		io.output("output", newSum, floatType, i === (n-1));
+	}
+}

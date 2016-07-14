@@ -1,0 +1,55 @@
+package multiply;
+
+import static com.maxeler.maxcompiler.v2.managers.standard.Manager.link;
+
+import com.maxeler.maxcompiler.v2.build.EngineParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+import com.maxeler.maxcompiler.v2.managers.engine_interfaces.CPUTypes;
+import com.maxeler.maxcompiler.v2.managers.engine_interfaces.EngineInterface;
+import com.maxeler.maxcompiler.v2.managers.engine_interfaces.EngineInterface.Direction;
+import com.maxeler.maxcompiler.v2.managers.engine_interfaces.InterfaceParam;
+import com.maxeler.maxcompiler.v2.managers.standard.IOLink.IODestination;
+import com.maxeler.maxcompiler.v2.managers.standard.Manager;
+
+class MultiplyManager{
+
+	static final int nMax = 30*1024;
+	private static final CPUTypes FLOAT_TYPE = CPUTypes.FLOAT;
+
+	//works only on vectors 12,24
+	static final int vectorSize = 24;
+
+	public static void main(String[] args) {
+		Manager manager = new Manager(new EngineParameters(args));
+		Kernel kernel = new MultiplyKernel(manager.makeKernelParameters(), nMax, vectorSize);
+		manager.setKernel(kernel);
+		manager.setIO(
+				link("matrixInput", IODestination.LMEM_LINEAR_1D),
+				link("vectorInput", IODestination.CPU),
+				link("output", IODestination.CPU)
+					);
+		manager.createSLiCinterface(interfaceDefault());
+		manager.addMaxFileConstant("vectorSize", vectorSize);
+		manager.build();
+	}
+
+	private static EngineInterface interfaceDefault() {
+		EngineInterface ei = new EngineInterface();
+		InterfaceParam zero = ei.addConstant(0l);
+
+		//not necessarily n*n because matrix length must be aligned for LMEM
+		InterfaceParam matrixLength = ei.addParam("matrixLength", CPUTypes.INT);
+		InterfaceParam n = ei.addParam("n", CPUTypes.INT);
+		InterfaceParam matrixSizeInBytes = matrixLength * FLOAT_TYPE.sizeInBytes();
+		InterfaceParam loopLength = ei.getAutoLoopOffset("MatMatMultiplyKernel", "loopLength");
+		ei.ignoreAutoLoopOffset("MatMatMultiplyKernel", "loopLength");
+
+		ei.setTicks("MatMatMultiplyKernel", n*n*loopLength/vectorSize);
+		ei.setScalar("MatMatMultiplyKernel", "n", n);
+		ei.setStream("vectorInput", FLOAT_TYPE, FLOAT_TYPE.sizeInBytes() * n);
+		ei.setLMemLinear("matrixInput", zero, matrixSizeInBytes);
+		ei.setStream("output", FLOAT_TYPE, FLOAT_TYPE.sizeInBytes() * n);
+		ei.ignoreAll(Direction.IN_OUT);
+		return ei;
+	}
+}

@@ -1,0 +1,69 @@
+package multiply;
+
+import maxpower.kernel.KernelBinaryOp.Add;
+import maxpower.utils.TreeReduce;
+
+import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.OffsetExpr;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorType;
+import com.maxeler.maxcompiler.v2.utils.MathUtils;
+
+class MultiplyKernel extends Kernel {
+
+	final DFEType intType = dfeUInt(32);
+	final DFEType floatType = dfeFloat(8,24);
+
+
+	MultiplyKernel(KernelParameters parameters, int nMax, int vectorDepth) {
+		super(parameters);
+
+		final DFEVectorType<DFEVar> vectorType = new DFEVectorType<DFEVar>(floatType, vectorDepth);
+		final int addrBits = MathUtils.bitsToAddress(nMax+1);
+		DFEType addrType = dfeUInt(addrBits);
+		DFEVar n = io.scalarInput("n", addrType);
+
+		// Set up counters for x, y and small loop
+		OffsetExpr loopLength = stream.makeOffsetAutoLoop("loopLength");//"loopLength");
+		DFEVar loopLengthVal = loopLength.getDFEVar(this, dfeUInt(8));
+		CounterChain chain = control.count.makeCounterChain();
+		DFEVar x = chain.addCounter(n, 1);
+		DFEVar y = chain.addCounter(n, vectorDepth);
+
+		DFEVar loopCounter = chain.addCounter(loopLengthVal, 1);
+		DFEVar readingVector = x === 0 & loopCounter === 0;
+		DFEVector<DFEVar> inVector = io.input("vectorInput", vectorType, readingVector);
+		Memory<DFEVector<DFEVar>> ram = mem.alloc(vectorType, nMax+1);
+		ram.write(y, inVector, readingVector);
+
+		DFEVector<DFEVar> matrixInputVec = io.input("matrixInput", vectorType, loopCounter === 0);
+
+
+		// At the head of the loop, we select whether to take the initial value
+		// or the value that is being carried around the data flow cycle
+		DFEVector<DFEVar> carriedSum = vectorType.newInstance(this);
+		DFEVector<DFEVar> sum = y === 0 ? constant.vect(vectorDepth, 0.0) : carriedSum;
+
+		DFEVector<DFEVar> newSum = vectorType.newInstance(this);
+
+		DFEVar[] summands = new DFEVar[vectorDepth];
+
+		DFEVector<DFEVar> elFromRam = vectorType.newInstance(this);
+		elFromRam = x === 0 ? inVector : ram.read(y);
+
+		newSum <== matrixInputVec * elFromRam + sum;
+		carriedSum <== stream.offset(newSum, -loopLength);
+
+		for(int i=0; i < vectorDepth; i++){
+			summands[i] = newSum[i];
+		}
+
+		io.output("output", TreeReduce.reduce(new Add<DFEVar>(), summands), floatType,  y === (n-vectorDepth) & loopCounter === (loopLengthVal-1));
+
+	}
+}

@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench progressCount="32" version="3.0">
+<workbenchAdvisor/>
+<window height="780" maximized="true" width="1153" x="172" y="88">
+<fastViewData fastViewLocation="1024">
+<orientation position="512" view="org.eclipse.ui.navigator.ProjectExplorer"/>
+</fastViewData>
+<perspectiveBar>
+<itemSize x="160"/>
+</perspectiveBar>
+<coolbarLayout locked="0">
+<coolItem id="group.file" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="104" y="30"/>
+<coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="com.maxeler.maxcompiler.ui.toolbar" itemType="typeToolBarContribution" x="396" y="30"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="76" y="30"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="124" y="30"/>
+<coolItem id="group.nav" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="184" y="30"/>
+<coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="com.maxeler.build.profile.editors.BuildProfileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.cdt.ui.editor.CEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="group.help" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+</coolbarLayout>
+<page focus="true" label="Workspace - MaxCompiler">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="PagingAlgCpuCode.c" partName="PagingAlgCpuCode.c" path="/home/demo/workspace22/PagingAlg/CPUCode/PagingAlgCpuCode.c" title="PagingAlgCpuCode.c" tooltip="PagingAlg_CPUCode/PagingAlgCpuCode.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PagingAlg_CPUCode/PagingAlgCpuCode.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4414" selectionTopPixel="3043"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MultiplyKernel.maxj" partName="MultiplyKernel.maxj" path="/home/demo/workspace22/PagingAlg/EngineCode/src/multiply/MultiplyKernel.maxj" title="MultiplyKernel.maxj" tooltip="PagingAlg_EngineCode/src/multiply/MultiplyKernel.maxj" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PagingAlg_EngineCode/src/multiply/MultiplyKernel.maxj"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MultiplyManager.maxj" partName="MultiplyManager.maxj" path="/home/demo/workspace22/PagingAlg/EngineCode/src/multiply/MultiplyManager.maxj" title="MultiplyManager.maxj" tooltip="PagingAlg_EngineCode/src/multiply/MultiplyManager.maxj" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PagingAlg_EngineCode/src/multiply/MultiplyManager.maxj"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="545" selectionTopPixel="0"/>
+</editor>
+</editors>
+<views>
+<view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
+<viewState CommonNavigator.LINKING_ENABLED="0" CommonNavigator.LINKING_ENABLED.delayed="0" currentWorkingSetName="Aggregate:Transposed:TransposedLMem:TransposedVec:TransposedVecLMem:Basic:BasicLMem:BasicVec:BasicVecLMem:TiledVecLMem:TiledVec:Paging:AMultiplyMatrixMatrixAcceleratedVec:AMultiplyMatrixVectorAcceleratedOffset:" org.eclipse.cdt.ui.cview.groupincludes="false" org.eclipse.cdt.ui.cview.groupmacros="false" org.eclipse.cdt.ui.editor.CUChildren="true" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="1"/>
+</view>
+<view id="com.maxeler.build.profile.simulation.views.SimulationLog" partName="Simulated System Log">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.ProgressView" partName="Progress">
+<viewState/>
+</view>
+<view id="org.eclipse.search.ui.views.SearchView" partName="Search">
+<viewState isPinned="false">
+<view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
+<view IMemento.internal.id="org.eclipse.cdt.ui.pdomSearchViewPage" definitionColumnWidth="150" locationColumnWidth="300" matchColumnWidth="300" org.eclipse.search.lastActivation="1" org.eclipse.search.resultpage.layout="2" showEnclosingDefinitions="true"/>
+</viewState>
+</view>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
+<viewState/>
+</view>
+</views>
+<perspectives activePart="org.eclipse.ui.console.ConsoleView" activePerspective="org.eclipse.jdt.ui.MaxCompilerPerspective">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.jdt.internal.ui.MaxCompilerPerspectiveFactory" id="org.eclipse.jdt.ui.MaxCompilerPerspective" label="MaxCompiler"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.eclipse.cdt.debug.edc.ui.snapshotDebuggingActionSet"/>
+<alwaysOnActionSet id="org.eclipse.cdt.debug.edc.ui.debugEDCActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<show_view_action id="org.eclipse.jdt.ui.PackageExplorer"/>
+<show_view_action id="org.eclipse.jdt.ui.TypeHierarchy"/>
+<show_view_action id="org.eclipse.jdt.ui.SourceView"/>
+<show_view_action id="org.eclipse.jdt.ui.JavadocView"/>
+<show_view_action id="org.eclipse.search.ui.views.SearchView"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.ui.views.ResourceNavigator"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.ui.views.ProgressView"/>
+<show_view_action id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<show_view_action id="org.eclipse.ui.texteditor.TemplatesView"/>
+<show_view_action id="org.eclipse.pde.runtime.LogView"/>
+<new_wizard_action id="com.maxeler.maxcompiler.ui.templateWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewMaxJClassCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewPackageCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewInterfaceCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewEnumCreationWizard"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaBrowsingPerspective"/>
+<perspective_action id="org.eclipse.debug.ui.DebugPerspective"/>
+<hide_toolbar_item_id id="org.eclipse.debug.ui.launchActionSet"/>
+<hide_toolbar_item_id id="org.eclipse.ui.file.print"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<view id="com.maxeler.build.profile.simulation.views.SimulationLog"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.search.ui.views.SearchView"/>
+<fastViewBars>
+<fastViewBar fastViewLocation="1024" id="bottom" orientation="256" selectedTabId="org.eclipse.ui.views.ProgressView" style="0">
+<fastViews>
+<view id="org.eclipse.ui.views.ProgressView" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
+</fastViewBars>
+<layout>
+<mainWindow>
+<info folder="true" part="left">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@3f677737" ratio="0.7495049" ratioLeft="757" ratioRight="253" relationship="2" relative="left">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@2d258595" ratio="0.18072289" ratioLeft="345" ratioRight="1564" relationship="2" relative="left">
+<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">
+<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="bottom" ratio="0.6212664" ratioLeft="520" ratioRight="317" relationship="4" relative="org.eclipse.ui.internal.ViewStack@2d258595">
+<folder appearance="2" expanded="0">
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info folder="true" part="right" ratio="0.74934036" ratioLeft="568" ratioRight="190" relationship="2" relative="org.eclipse.ui.internal.ViewStack@2d258595">
+<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="com.maxeler.build.profile.simulation.views.SimulationLog" label="Simulated System Log"/>
+<page content="org.eclipse.ui.texteditor.TemplatesView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.17773893" ratioLeft="305" ratioRight="1411" relationship="2" relative="org.eclipse.ui.internal.ViewStack@2d258595"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@114c37d" ratio="0.6320191" ratioLeft="529" ratioRight="308" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="org.eclipse.search.ui.views.SearchView" label="Search"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/TiledVec_CPUCode/TiledVecCpuCode.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/TiledVec_EngineCode/src/multiply/MultiplyKernel.maxj"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/TiledVecLMem_EngineCode/src/multiply/MultiplyManager.maxj"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/TiledVec_EngineCode/src/multiply/MultiplyManager.maxj"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/TiledVecLMem_CPUCode/MultiplyMatrixMatrixAcceleratedCpuCode.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/TiledVecLMem_CPUCode/TiledVecLMemCpuCode.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/TiledVecLMem_EngineCode/src/multiply/MultiplyKernel.maxj"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/TiledVecLMem_EngineCode/src/multiply/MultiplyManager.maxj"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/TiledVecLMem_EngineCode/src/multiply/MultiplyKernel.maxj"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/TiledVec_EngineCode/src/multiply/MultiplyKernel.maxj"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PagingAlg_CPUCode/PagingAlgCpuCode.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/PagingAlg_EngineCode/src/multiply/MultiplyKernel.maxj"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/PagingAlg_EngineCode/src/multiply/MultiplyManager.maxj"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PagingAlg_CPUCode/PagingAlgCpuCode.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/PagingAlg_EngineCode/src/multiply/MultiplyKernel.maxj"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/PagingAlg_EngineCode/src/multiply/MultiplyManager.maxj"/>
+</editors>
+<item historyLabel="TiledVecCpuCode.c" index="0">
+<position/>
+</item>
+<item historyLabel="MultiplyManager.maxj" index="3">
+<position info="not_deleted" x="582" y="0"/>
+</item>
+<item historyLabel="TiledVecCpuCode.c" index="0">
+<position/>
+</item>
+<item historyLabel="MultiplyManager.maxj" index="2">
+<position info="not_deleted" x="751" y="0"/>
+</item>
+<item historyLabel="MultiplyManager.maxj" index="3">
+<position info="not_deleted" x="582" y="0"/>
+</item>
+<item historyLabel="TiledVecCpuCode.c" index="0">
+<position/>
+</item>
+<item historyLabel="MultiplyManager.maxj" index="3">
+<position info="not_deleted" x="582" y="0"/>
+</item>
+<item historyLabel="TiledVecCpuCode.c" index="0">
+<position/>
+</item>
+<item historyLabel="MultiplyKernel.maxj" index="1">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MultiplyManager.maxj" index="3">
+<position info="not_deleted" x="582" y="0"/>
+</item>
+<item historyLabel="TiledVecCpuCode.c" index="0">
+<position/>
+</item>
+<item historyLabel="MultiplyMatrixMatrixAcceleratedCpuCode.c" index="4">
+<position info="not_deleted" x="3266" y="0"/>
+</item>
+<item historyLabel="TiledVecCpuCode.c" index="0">
+<position/>
+</item>
+<item historyLabel="MultiplyMatrixMatrixAcceleratedCpuCode.c" index="4">
+<position info="not_deleted" x="3467" y="0"/>
+</item>
+<item historyLabel="TiledVecCpuCode.c" index="0">
+<position/>
+</item>
+<item historyLabel="TiledVecLMemCpuCode.c" index="5">
+<position/>
+</item>
+<item historyLabel="TiledVecCpuCode.c" index="0">
+<position/>
+</item>
+<item historyLabel="TiledVecLMemCpuCode.c" index="5">
+<position/>
+</item>
+<item historyLabel="TiledVecLMemCpuCode.c" index="5">
+<position/>
+</item>
+<item historyLabel="TiledVecCpuCode.c" index="0">
+<position info="not_deleted" x="3326" y="93"/>
+</item>
+<item historyLabel="TiledVecLMemCpuCode.c" index="5">
+<position/>
+</item>
+<item historyLabel="MultiplyKernel.maxj" index="6">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="TiledVecLMemCpuCode.c" index="5">
+<position info="not_deleted" x="5143" y="0"/>
+</item>
+<item historyLabel="TiledVecLMemCpuCode.c" index="5">
+<position info="not_deleted" x="5300" y="0"/>
+</item>
+<item historyLabel="MultiplyManager.maxj" index="7">
+<position info="not_deleted" x="750" y="0"/>
+</item>
+<item historyLabel="MultiplyKernel.maxj" index="8">
+<position info="not_deleted" x="1293" y="0"/>
+</item>
+<item historyLabel="MultiplyKernel.maxj" index="9">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MultiplyKernel.maxj" index="8">
+<position info="not_deleted" x="1389" y="0"/>
+</item>
+<item historyLabel="TiledVecLMemCpuCode.c" index="5">
+<position info="not_deleted" x="4977" y="0"/>
+</item>
+<item historyLabel="MultiplyKernel.maxj" index="8">
+<position info="not_deleted" x="1389" y="0"/>
+</item>
+<item historyLabel="MultiplyManager.maxj" index="7">
+<position info="not_deleted" x="750" y="0"/>
+</item>
+<item historyLabel="MultiplyKernel.maxj" index="8">
+<position info="not_deleted" x="1389" y="0"/>
+</item>
+<item historyLabel="TiledVecLMemCpuCode.c" index="5">
+<position info="not_deleted" x="4977" y="0"/>
+</item>
+<item historyLabel="PagingAlgCpuCode.c" index="10">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="PagingAlgCpuCode.c" index="10">
+<position info="not_deleted" x="3846" y="12"/>
+</item>
+<item historyLabel="PagingAlgCpuCode.c" index="10">
+<position info="not_deleted" x="2419" y="12"/>
+</item>
+<item historyLabel="PagingAlgCpuCode.c" index="10">
+<position info="not_deleted" x="3353" y="0"/>
+</item>
+<item historyLabel="PagingAlgCpuCode.c" index="10">
+<position info="not_deleted" x="4564" y="0"/>
+</item>
+<item historyLabel="MultiplyKernel.maxj" index="11">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MultiplyManager.maxj" index="12">
+<position info="not_deleted" x="545" y="0"/>
+</item>
+<item historyLabel="TiledVecLMemCpuCode.c" index="5">
+<position info="not_deleted" x="4977" y="0"/>
+</item>
+<item historyLabel="MultiplyManager.maxj" index="12">
+<position info="not_deleted" x="545" y="0"/>
+</item>
+<item historyLabel="TiledVecLMemCpuCode.c" index="5">
+<position info="not_deleted" x="4977" y="0"/>
+</item>
+<item historyLabel="MultiplyKernel.maxj" index="11">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MultiplyKernel.maxj" index="8">
+<position info="not_deleted" x="1389" y="0"/>
+</item>
+<item historyLabel="PagingAlgCpuCode.c" index="10">
+<position info="not_deleted" x="4564" y="0"/>
+</item>
+<item historyLabel="PagingAlgCpuCode.c" index="13">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="PagingAlgCpuCode.c" index="13">
+<position info="not_deleted" x="4414" y="0"/>
+</item>
+<item historyLabel="MultiplyKernel.maxj" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item active="true" historyLabel="MultiplyManager.maxj" index="15">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+</navigationHistory>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+<trimLayout>
+<trimArea IMemento.internal.id="128">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
+</trimArea>
+<trimArea IMemento.internal.id="1024">
+<trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
+<trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+<trimItem IMemento.internal.id="maxeler.logo.bar.id"/>
+<trimItem IMemento.internal.id="bottom"/>
+</trimArea>
+</trimLayout>
+</window>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MultiplyManager.maxj" tooltip="PagingAlg_EngineCode/src/multiply/MultiplyManager.maxj">
+<persistable path="/PagingAlg_EngineCode/src/multiply/MultiplyManager.maxj"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MultiplyKernel.maxj" tooltip="PagingAlg_EngineCode/src/multiply/MultiplyKernel.maxj">
+<persistable path="/PagingAlg_EngineCode/src/multiply/MultiplyKernel.maxj"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="PagingAlgCpuCode.c" tooltip="PagingAlg_CPUCode/PagingAlgCpuCode.c">
+<persistable path="/PagingAlg_CPUCode/PagingAlgCpuCode.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MultiplyKernel.maxj" tooltip="TiledVec_EngineCode/src/multiply/MultiplyKernel.maxj">
+<persistable path="/TiledVec_EngineCode/src/multiply/MultiplyKernel.maxj"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MultiplyKernel.maxj" tooltip="TiledVecLMem_EngineCode/src/multiply/MultiplyKernel.maxj">
+<persistable path="/TiledVecLMem_EngineCode/src/multiply/MultiplyKernel.maxj"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MultiplyManager.maxj" tooltip="TiledVecLMem_EngineCode/src/multiply/MultiplyManager.maxj">
+<persistable path="/TiledVecLMem_EngineCode/src/multiply/MultiplyManager.maxj"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="TiledVecCpuCode.c" tooltip="TiledVec_CPUCode/TiledVecCpuCode.c">
+<persistable path="/TiledVec_CPUCode/TiledVecCpuCode.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MultiplyManager.maxj" tooltip="TiledVec_EngineCode/src/multiply/MultiplyManager.maxj">
+<persistable path="/TiledVec_EngineCode/src/multiply/MultiplyManager.maxj"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="TiledCpuCode.c" tooltip="Tiled_CPUCode/TiledCpuCode.c">
+<persistable path="/Tiled_CPUCode/TiledCpuCode.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MultiplyKernel.maxj" tooltip="Tiled_EngineCode/src/multiply/MultiplyKernel.maxj">
+<persistable path="/Tiled_EngineCode/src/multiply/MultiplyKernel.maxj"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="common.c" tooltip="Tiled_CPUCode/common.c">
+<persistable path="/Tiled_CPUCode/common.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MultiplyManager.maxj" tooltip="Tiled_EngineCode/src/multiply/MultiplyManager.maxj">
+<persistable path="/Tiled_EngineCode/src/multiply/MultiplyManager.maxj"/>
+</file>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="EngineInterface.class" tooltip="com.maxeler.maxcompiler.v2.managers.engine_interfaces.EngineInterface">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=BasicLMem_EngineCode/\/opt\/maxeler\/maxcompiler\/lib\/MaxCompiler.jar&lt;com.maxeler.maxcompiler.v2.managers.engine_interfaces(EngineInterface.class"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.maxeler.build.profile.editors.BuildProfileEditor" name="RunRules.settings" tooltip="Tiled_RunRules/Simulation/RunRules.settings">
+<persistable path="/Tiled_RunRules/Simulation/RunRules.settings"/>
+</file>
+</mruList>
+</workbench>

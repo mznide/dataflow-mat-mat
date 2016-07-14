@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<maxCompilerManager version="2">
+<enginePart internalEngineSubproject="BasicVecLMem_EngineCode" isSrcBin="false" isUseDefaultSelected="false" outputLocation="/BasicVecLMem_EngineCode/bin" projectName="BasicVecLMem"/>
+<cpuPart internalCpuSubproject="BasicVecLMem_CPUCode"/>
+<watchedFiles/>
+</maxCompilerManager>

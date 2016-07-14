@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<maxCompilerManager version="2">
+<enginePart internalEngineSubproject="Transposed_EngineCode" isSrcBin="false" isUseDefaultSelected="false" outputLocation="/Transposed_EngineCode/bin" projectName="Transposed"/>
+<cpuPart internalCpuSubproject="Transposed_CPUCode"/>
+<watchedFiles/>
+</maxCompilerManager>

@@ -1,0 +1,48 @@
+package multiply;
+
+
+import com.maxeler.maxcompiler.v2.build.EngineParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+import com.maxeler.maxcompiler.v2.managers.engine_interfaces.CPUTypes;
+import com.maxeler.maxcompiler.v2.managers.engine_interfaces.EngineInterface;
+import com.maxeler.maxcompiler.v2.managers.engine_interfaces.InterfaceParam;
+import com.maxeler.maxcompiler.v2.managers.standard.Manager;
+import com.maxeler.maxcompiler.v2.managers.standard.Manager.IOType;
+
+
+class MultiplyManager{
+
+	static final int nMax = 20*1024;
+	static final int vectorSize = 32;
+
+	//loop tiling - to make offset smaller
+	static final int C = 16;
+
+	public static void main(String[] args) {
+		Manager manager = new Manager(new EngineParameters(args));
+		Kernel kernel = new MultiplyKernel(manager.makeKernelParameters(), nMax, vectorSize, C);
+		manager.setKernel(kernel);
+		manager.setIO(IOType.ALL_CPU);
+		manager.createSLiCinterface(interfaceDefault());
+		manager.addMaxFileConstant("vectorSize", vectorSize);
+		manager.addMaxFileConstant("C", C);
+		manager.build();
+	}
+
+	private static EngineInterface interfaceDefault() {
+		EngineInterface ei = new EngineInterface();
+
+		InterfaceParam matrixLength = ei.addParam("matrixLength", CPUTypes.INT);
+		InterfaceParam n = ei.addParam("n", CPUTypes.INT);
+		InterfaceParam lengthInBytes = matrixLength * CPUTypes.FLOAT.sizeInBytes();
+
+		ei.setTicks("MatMatMultiplyKernel", matrixLength/vectorSize);
+
+		ei.setScalar("MatMatMultiplyKernel", "n", n);
+		ei.setStream("vectorInput", CPUTypes.FLOAT, CPUTypes.FLOAT.sizeInBytes() * n);
+		ei.setStream("matrixInput", CPUTypes.FLOAT, lengthInBytes);
+		ei.setStream("output", CPUTypes.FLOAT, CPUTypes.FLOAT.sizeInBytes() * n);
+
+		return ei;
+	}
+}

@@ -1,0 +1,52 @@
+package multiply;
+
+import maxpower.kernel.KernelBinaryOp.Add;
+import maxpower.utils.TreeReduce;
+
+import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorType;
+
+class MultiplyKernel extends Kernel {
+
+	final DFEType intType = dfeUInt(32);
+	final DFEType floatType = dfeFloat(8,24);
+
+	MultiplyKernel(KernelParameters parameters, int nMax, int vectorDepth) {
+		super(parameters);
+		final DFEVectorType<DFEVar> vectorType = new DFEVectorType<DFEVar>(floatType, vectorDepth);
+
+		DFEVar n = io.scalarInput("n", intType);
+
+		// Set up counters for 2D loop
+		CounterChain chain = control.count.makeCounterChain();
+		DFEVar y = chain.addCounter(n, 1);
+		DFEVar x = chain.addCounter(n, 1);
+
+		DFEVector<DFEVar> inVector = io.input("vectorInput", vectorType, x===0);
+
+		// Read matrix input
+		DFEVector<DFEVar> matrixInputVec = io.input("matrixInput", vectorType);
+		// At the head of the loop, we select whether to take the initial value,
+		// or the value that is being carried around the data flow cycle
+		DFEVector<DFEVar> carriedSum = vectorType.newInstance(this);
+		DFEVector<DFEVar> sum = y === 0 ? constant.vect(vectorDepth, 0.0) : carriedSum;
+
+		DFEVector<DFEVar> newSum = matrixInputVec*inVector+sum;
+
+		carriedSum <== stream.offset(newSum, n.cast(dfeInt(32))*-1, -nMax, -16);
+
+		DFEVar[] summands = new DFEVar[vectorDepth];
+
+		for(int i=0; i < vectorDepth; i++){
+			summands[i] = newSum[i];
+		}
+
+		// We have a controlled output to deliver the sum at the end of each column
+		io.output("output", TreeReduce.reduce(new Add<DFEVar>(), summands), floatType, y === (n/vectorDepth-1));
+	}
+}

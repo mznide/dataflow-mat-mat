@@ -1,0 +1,197 @@
+/**
+ * 	Summary:
+ *     CPU code for Matrix*vector multiplication.
+ *     Ensures inputs are transposed to match the order they are consumed in by the kernel.
+ * 	   # Matrix is read as a stream (transposed matrix)
+ *	   # x is read as a stream (every n ticks)
+ *	   # big loop (size=n)
+ *
+ */
+#include <stdlib.h>
+#include <stdint.h>
+#include <string.h>
+#include <getopt.h>
+#include <MaxSLiCInterface.h>
+#include "Maxfiles.h"
+#include "common.h"
+
+#define C MatVecMultiply_C
+
+void help(const char * cmd) {
+    printf("Usage: %s [filename]\n", cmd);
+    printf("\nOptions:\n");
+    printf("  -h, --help\n\tPrint short help\n");
+    printf("  -n, --size\n\tSize n of matrix\n");
+    printf("  -r, --range\n\tRange of elements\n");
+    printf("  -t, --trace\n\tTrace level: 0,1,2\n");
+
+};
+
+// show help
+int help_flag = 0;
+
+// number of rows / columns. Matrix size is n*n
+int n = 64;
+
+/* tracing
+	0 - prints only n, sum of result, realtime, cputime
+	1 - prints input, output, final result
+	2 - tests correctness of result and prints if test passed
+*/
+int trace = 0;
+
+
+
+// elements of matrix are in -range  to +range interval
+float range = 100.0;
+
+struct option options[] = {
+	{"help",	required_argument, 0, 'h'},
+	{"size",	required_argument, 0, 'n'},
+	{"trace",	required_argument, 0, 't'},
+	{"range",	required_argument, 0, 'r'},
+	{0,0,0,0}
+};
+
+#define SHORTOPT "hn:t:r:"
+
+void parse_args(int argc, char * argv[]) {
+	while (1) {
+		int option_index = 0;
+		int opt = getopt_long(argc, argv, SHORTOPT, options, &option_index);
+
+		if (opt == -1) break;
+
+		switch (opt) {
+			case 'h':
+				help_flag = 1;
+				break;
+			case 'n':
+				n = atoi(optarg);
+				break;
+			case 't':
+				trace = atoi(optarg);
+				break;
+			case 'r':
+				range = atoi(optarg);
+				break;
+			case '?':
+				error(1, "Invalid1 option '%c'", optopt);
+			default:
+				abort();
+		}
+	}
+	if (help_flag) {
+		help(argv[0]);
+		exit(0);
+	}
+}
+
+
+//transforms matrix for vectorized multiplication
+void transform (int n, float *input, float *matrixTransformed, int vectorSize){
+	for (int v = 0; v < n; v=v+vectorSize) {
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < vectorSize; j++) {
+				matrixTransformed[i*vectorSize +j + v*n] = input[j+i*n+v];
+			}
+		}
+	}
+
+}
+
+void transform_C(int n, float *mat, float *matrixTransformed, int C1){
+	int count = 0;
+	for (int yy = 0; yy < n; yy += C1) {
+		for ( int x = 0; x < n; ++x) {
+			for ( int y = yy; y < yy + C1; ++y) {
+				matrixTransformed[count] = mat[y * n + x];
+				count++;
+			}
+		}
+	}
+}
+
+
+
+int main(int argc, char * argv[])
+{
+	if (argc > 1){
+		parse_args(argc, argv);
+	}
+
+	const int size = n * n;
+	int dataSizeBytes = size * sizeof(float);
+	int vectorSizeBytes = n * sizeof(float);
+
+	float *mat_a = malloc(dataSizeBytes);
+	float *mat_b = malloc(dataSizeBytes);
+	float *output = malloc(dataSizeBytes);
+	float *expected = malloc(dataSizeBytes);
+
+	float *matATrans = malloc(dataSizeBytes);
+	float *matBTrans = malloc(dataSizeBytes);
+
+	generate_matrix(n, mat, range);
+	generateVector(n, input_vector, range);
+
+	timing_t timer1;
+	timer_start(&timer1);
+	transform_C(n, mat_a, matATrans, C);
+
+	transpose(n1, mat_b, matBTrans);
+
+	for (int i=0; i<n1; i++) {
+		vector = &matBTrans[n1*i];
+		MatMatMultiply(n1*n1, n1, matATrans, vector, &output[n1*i]);
+	}
+
+
+	timer_stop(&timer1);
+	float sum = sumVec(n, output);
+
+	printf("%d %f %ld %ld\n", n, sum, timer1.realtime, timer1.cputime);
+
+
+	if (trace == 1) {
+		printf("\nInput matrix\n");
+
+		for (int i=0; i<n; i++){
+			for (int j=0; j<n; j++){
+				printf("%f " , mat[i*n+j]);
+			}
+			printf("\n");
+		}
+		printf("\nInput vector \n");
+
+		for (int i=0; i<n; i++){
+			printf("%f " , input_vector[i]);
+		}
+
+		printf("\n\nResult\n");
+		for (int i=0; i<n; i++){
+			printf("%f " , output[i]);
+		}
+		printf("\n");
+	}
+	else if (trace == 2) {
+
+		multiplyCPUMatrix(n, matA, matB, expected);
+		transpose(n, output, outputTrans);
+		int status = check(n*n, output, expected);
+		if (status)
+			printf("Test failed.\n");
+		else
+			printf("Test passed OK!\n");
+		return status;
+	}
+
+
+	free(mat);
+	free(input_vector);
+	free(output);
+	free(expected);
+	free(matrix_transposed);
+
+	return 0;
+}

@@ -1,0 +1,60 @@
+package multiply;
+
+import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.OffsetExpr;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar;
+import com.maxeler.maxcompiler.v2.utils.MathUtils;
+
+class MultiplyKernel extends Kernel {
+
+	final DFEType intType = dfeUInt(32);
+	final DFEType floatType = dfeFloat(8,24);
+
+	MultiplyKernel(KernelParameters parameters, int nMax) {
+		super(parameters);
+
+		final int addrBits = MathUtils.bitsToAddress(nMax+1);
+		DFEType addrType = dfeUInt(addrBits);
+		DFEVar n = io.scalarInput("n", addrType);
+
+		// Set up counters for x, y and small loop
+		OffsetExpr loopLength = stream.makeOffsetAutoLoop("loopLength");
+		DFEVar loopLengthVal = loopLength.getDFEVar(this, dfeUInt(8));
+		CounterChain chain = control.count.makeCounterChain();
+		DFEVar x = chain.addCounter(n, 1);
+		DFEVar y = chain.addCounter(n, 1);
+		DFEVar loopCounter = chain.addCounter(loopLengthVal, 1);
+
+		//We read from stream vector input when this variable is True
+		//It will be true in first row at the beginning of each small loop
+		DFEVar readingVector = x === 0 & loopCounter === 0;
+
+		DFEVar inVector = io.input("vectorInput", dfeFloat(8,24), readingVector);
+
+		Memory<DFEVar> ram = mem.alloc(dfeFloat(8,24), nMax+1);
+		ram.write(y, inVector, readingVector);
+
+		// First row we take elements from stream inVector. After that we read from ram
+        DFEVar elFromRam = x === 0 & loopCounter === 0 ? inVector : ram.read(y);
+
+		// Read matrix input
+		DFEVar input = io.input("matrixInput", floatType, loopCounter === (loopLengthVal-1));
+
+		// At the head of the loop, we select whether to take the initial value,
+		// or the value that is being carried around the data flow cycle
+		DFEVar carriedSum = floatType.newInstance(this);
+		DFEVar sum = y === 0 ? 0.0 : carriedSum;
+
+		DFEVar newSum = input * elFromRam + sum;
+
+		carriedSum <== stream.offset(newSum, -loopLength);
+
+		// We deliver result at the end of each row
+		io.output("output", newSum, floatType, y === (n - 1) & loopCounter === (loopLengthVal-1));
+	}
+
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<maxCompilerManager version="2">
+<enginePart internalEngineSubproject="Tiled_EngineCode" isSrcBin="false" isUseDefaultSelected="false" outputLocation="/Tiled_EngineCode/bin" projectName="Tiled"/>
+<cpuPart internalCpuSubproject="Tiled_CPUCode"/>
+<watchedFiles/>
+</maxCompilerManager>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<maxCompilerManager version="2">
+<enginePart internalEngineSubproject="TiledVec_EngineCode" isSrcBin="false" isUseDefaultSelected="false" outputLocation="/TiledVec_EngineCode/bin" projectName="TiledVec"/>
+<cpuPart internalCpuSubproject="TiledVec_CPUCode"/>
+<watchedFiles/>
+</maxCompilerManager>

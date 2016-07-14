@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<maxCompilerManager version="2">
+<enginePart internalEngineSubproject="PagingAlg_EngineCode" isSrcBin="false" isUseDefaultSelected="false" outputLocation="/PagingAlg_EngineCode/bin" projectName="PagingAlg"/>
+<cpuPart internalCpuSubproject="PagingAlg_CPUCode"/>
+<watchedFiles/>
+</maxCompilerManager>

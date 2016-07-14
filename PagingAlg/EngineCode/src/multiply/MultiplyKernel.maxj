@@ -1,0 +1,48 @@
+package multiply;
+
+import maxpower.kernel.KernelBinaryOp.Add;
+import maxpower.utils.TreeReduce;
+
+import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar;
+import com.maxeler.maxcompiler.v2.utils.MathUtils;
+
+class MultiplyKernel extends Kernel {
+
+	final DFEType scalarType = dfeFloat(8,24);
+
+	MultiplyKernel(KernelParameters parameters, int tileSize) {
+		super(parameters);
+
+		CounterChain cc = control.count.makeCounterChain();
+		DFEVar i = cc.addCounter(tileSize, 1);
+		DFEVar j = cc.addCounter(tileSize, 1);
+
+		DFEVar[] summands = new DFEVar[tileSize];
+
+		DFEVar aIn = io.input("input", scalarType);
+		DFEVar bIn = io.input("vectorInput", dfeFloat(8,24));
+
+		for (int n = 0; n < tileSize; ++n) {
+			DFEVar a = Reductions.streamHold(stream.offset(aIn, +n), (j === 0));
+
+			DFEType addrType = dfeUInt(MathUtils.bitsToAddress(tileSize));
+
+			DFEVar  address   = j.cast(addrType);
+			Memory<DFEVar> bBuf = mem.alloc(bIn.getType(), tileSize);
+
+			//write vertically; read horizontally
+			bBuf.write(address, bIn, (i === n));
+			// stream offset into future, so we can see entire tile within the buffer and read it transposed
+			DFEVar b = stream.offset(bBuf.read(address), +tileSize*tileSize);
+			summands[n] = a * b;
+		}
+
+		io.output("output", TreeReduce.reduce(new Add<DFEVar>(), summands), scalarType);
+	}
+}

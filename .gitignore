@@ -1,0 +1,15 @@
+*.class
+*.log
+*.csv
+
+# bin directory in EngineCode
+bin
+
+# RunRules
+.maxcompiler-activity.be
+binaries
+dist
+maxfiles
+objects
+*.o
+matvec

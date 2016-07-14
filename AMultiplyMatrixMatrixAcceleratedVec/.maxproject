@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<maxCompilerManager version="2">
+<enginePart internalEngineSubproject="AMultiplyMatrixMatrixAcceleratedVec_EngineCode" isSrcBin="false" isUseDefaultSelected="false" outputLocation="/AMultiplyMatrixMatrixAcceleratedVec_EngineCode/bin" projectName="AMultiplyMatrixMatrixAcceleratedVec"/>
+<cpuPart internalCpuSubproject="AMultiplyMatrixMatrixAcceleratedVec_CPUCode"/>
+<watchedFiles/>
+</maxCompilerManager>

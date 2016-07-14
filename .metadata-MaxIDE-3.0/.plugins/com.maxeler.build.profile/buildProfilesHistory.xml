@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<createdProfiles>
+<launchedProfile profileFolder="DFE" project="AMultiplyMatrixMatrixAcceleratedVec_RunRules"/>
+<launchedProfile profileFolder="Simulation" project="AMultiplyMatrixMatrixAcceleratedVec_RunRules"/>
+<launchedProfile profileFolder="Simulation" project="TransposedVec_RunRules"/>
+<launchedProfile profileFolder="Simulation" project="TransposedVecLMem_RunRules"/>
+<launchedProfile profileFolder="DFE" project="AMultiplyMatrixVectorAcceleratedOffset_RunRules"/>
+<launchedProfile profileFolder="Simulation" project="AMultiplyMatrixVectorAcceleratedOffset_RunRules"/>
+<launchedProfile profileFolder="Simulation" project="Tiled_RunRules"/>
+<launchedProfile profileFolder="Simulation" project="TiledVec_RunRules"/>
+<launchedProfile profileFolder="Simulation" project="TiledVecLMem_RunRules"/>
+<launchedProfile profileFolder="Simulation" project="PagingAlg_RunRules"/>
+</createdProfiles>

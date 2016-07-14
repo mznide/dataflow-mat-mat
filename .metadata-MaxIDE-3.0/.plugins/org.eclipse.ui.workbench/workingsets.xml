@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet cpuPart="true" editPageId="com.maxeler.maxcompiler.ui.MaxCompilerSetPage" enginePart="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1468487355880_6" label="Transposed" location="/home/demo/workspace22/Transposed" maxcompiler="true" name="Transposed" shared="false" state="true">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Transposed_EngineCode" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Transposed_CPUCode" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Transposed_RunRules" type="4"/>
+</workingSet>
+<workingSet cpuPart="true" editPageId="com.maxeler.maxcompiler.ui.MaxCompilerSetPage" enginePart="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1468487359411_8" label="TransposedLMem" location="/home/demo/workspace22/TransposedLMem" maxcompiler="true" name="TransposedLMem" shared="false" state="true">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/TransposedLMem_RunRules" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/TransposedLMem_EngineCode" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/TransposedLMem_CPUCode" type="4"/>
+</workingSet>
+<workingSet cpuPart="true" editPageId="com.maxeler.maxcompiler.ui.MaxCompilerSetPage" enginePart="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1468487362946_10" label="TransposedVec" location="/home/demo/workspace22/TransposedVec" maxcompiler="true" name="TransposedVec" shared="false" state="true">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/TransposedVec_RunRules" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/TransposedVec_CPUCode" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/TransposedVec_EngineCode" type="4"/>
+</workingSet>
+<workingSet cpuPart="true" editPageId="com.maxeler.maxcompiler.ui.MaxCompilerSetPage" enginePart="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1468487365808_12" label="TransposedVecLMem" location="/home/demo/workspace22/TransposedVecLMem" maxcompiler="true" name="TransposedVecLMem" shared="false" state="true">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/TransposedVecLMem_RunRules" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/TransposedVecLMem_CPUCode" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/TransposedVecLMem_EngineCode" type="4"/>
+</workingSet>
+<workingSet cpuPart="true" editPageId="com.maxeler.maxcompiler.ui.MaxCompilerSetPage" enginePart="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1468487368083_14" label="Basic" location="/home/demo/workspace22/Basic" maxcompiler="true" name="Basic" shared="false" state="true">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Basic_RunRules" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Basic_CPUCode" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Basic_EngineCode" type="4"/>
+</workingSet>
+<workingSet cpuPart="true" editPageId="com.maxeler.maxcompiler.ui.MaxCompilerSetPage" enginePart="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1468487372587_16" label="BasicLMem" location="/home/demo/workspace22/BasicLMem" maxcompiler="true" name="BasicLMem" shared="false" state="true">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/BasicLMem_RunRules" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/BasicLMem_EngineCode" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/BasicLMem_CPUCode" type="4"/>
+</workingSet>
+<workingSet cpuPart="true" editPageId="com.maxeler.maxcompiler.ui.MaxCompilerSetPage" enginePart="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1468487375495_18" label="BasicVec" location="/home/demo/workspace22/BasicVec" maxcompiler="true" name="BasicVec" shared="false" state="true">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/BasicVec_CPUCode" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/BasicVec_EngineCode" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/BasicVec_RunRules" type="4"/>
+</workingSet>
+<workingSet cpuPart="true" editPageId="com.maxeler.maxcompiler.ui.MaxCompilerSetPage" enginePart="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1468487378476_20" label="BasicVecLMem" location="/home/demo/workspace22/BasicVecLMem" maxcompiler="true" name="BasicVecLMem" shared="false" state="true">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/BasicVecLMem_CPUCode" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/BasicVecLMem_debug" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/BasicVecLMem_RunRules" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/BasicVecLMem_EngineCode" type="4"/>
+</workingSet>
+<workingSet cpuPart="true" editPageId="com.maxeler.maxcompiler.ui.MaxCompilerSetPage" enginePart="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1468488004287_22" label="TiledVecLMem" location="/home/demo/workspace22/TiledVecLMem" maxcompiler="true" name="TiledVecLMem" shared="false" state="true">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/TiledVecLMem_CPUCode" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/TiledVecLMem_EngineCode" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/TiledVecLMem_RunRules" type="4"/>
+</workingSet>
+<workingSet cpuPart="true" editPageId="com.maxeler.maxcompiler.ui.MaxCompilerSetPage" enginePart="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1468488006016_24" label="TiledVec" location="/home/demo/workspace22/TiledVec" maxcompiler="true" name="TiledVec" shared="false" state="true">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/TiledVec_EngineCode" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/TiledVec_RunRules" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/TiledVec_CPUCode" type="4"/>
+</workingSet>
+<workingSet cpuPart="true" editPageId="com.maxeler.maxcompiler.ui.MaxCompilerSetPage" enginePart="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1468488007739_26" label="PagingAlg" location="/home/demo/workspace22/PagingAlg" maxcompiler="true" name="PagingAlg" shared="false" state="true">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/PagingAlg_CPUCode" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/PagingAlg_EngineCode" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/PagingAlg_RunRules" type="4"/>
+</workingSet>
+<workingSet cpuPart="true" editPageId="com.maxeler.maxcompiler.ui.MaxCompilerSetPage" enginePart="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1468511188622_12" label="AMultiplyMatrixMatrixAcceleratedVec" location="/home/demo/workspace22/AMultiplyMatrixMatrixAcceleratedVec" maxcompiler="true" name="AMultiplyMatrixMatrixAcceleratedVec" shared="false" state="true">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/AMultiplyMatrixMatrixAcceleratedVec_EngineCode" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/AMultiplyMatrixMatrixAcceleratedVec_CPUCode" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/AMultiplyMatrixMatrixAcceleratedVec_RunRules" type="4"/>
+</workingSet>
+<workingSet cpuPart="true" editPageId="com.maxeler.maxcompiler.ui.MaxCompilerSetPage" enginePart="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1468516087080_14" label="Tiled" location="/home/demo/workspace22/Tiled" maxcompiler="true" name="Tiled" shared="false" state="true">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Tiled_EngineCode" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Tiled_CPUCode" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Tiled_RunRules" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1468516087110_15" label="Multiple Working Sets" name="Aggregate:Transposed:TransposedLMem:TransposedVec:TransposedVecLMem:Basic:BasicLMem:BasicVec:BasicVecLMem:TiledVecLMem:TiledVec:Paging:AMultiplyMatrixMatrixAcceleratedVec:AMultiplyMatrixVectorAcceleratedOffset:">
+<workingSet IMemento.internal.id="Transposed"/>
+<workingSet IMemento.internal.id="TransposedLMem"/>
+<workingSet IMemento.internal.id="TransposedVec"/>
+<workingSet IMemento.internal.id="TransposedVecLMem"/>
+<workingSet IMemento.internal.id="Basic"/>
+<workingSet IMemento.internal.id="BasicLMem"/>
+<workingSet IMemento.internal.id="BasicVec"/>
+<workingSet IMemento.internal.id="BasicVecLMem"/>
+<workingSet IMemento.internal.id="TiledVecLMem"/>
+<workingSet IMemento.internal.id="TiledVec"/>
+<workingSet IMemento.internal.id="PagingAlg"/>
+<workingSet IMemento.internal.id="AMultiplyMatrixMatrixAcceleratedVec"/>
+<workingSet IMemento.internal.id="Tiled"/>
+</workingSet>
+</workingSetManager>

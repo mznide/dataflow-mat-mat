@@ -1,0 +1,42 @@
+package multiply;
+
+import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar;
+
+class MultiplyKernel extends Kernel {
+
+	final DFEType intType = dfeUInt(32);
+	final DFEType floatType = dfeFloat(8,24);
+
+	MultiplyKernel(KernelParameters parameters, int nMax) {
+		super(parameters);
+
+		DFEVar n = io.scalarInput("n", intType);
+
+		// Set up counters for 2D loop
+		CounterChain chain = control.count.makeCounterChain();
+		DFEVar y = chain.addCounter(n, 1);
+		DFEVar x = chain.addCounter(n, 1); // x
+
+		//Every n ticks we read vector
+		DFEVar inVector = io.input("vectorInput", dfeFloat(8,24), x===0);
+
+		// Read matrix input
+		DFEVar input = io.input("matrixInput", floatType);
+
+		// At the head of the loop, we select whether to take the initial value,
+		// or the value that is being carried around the data flow cycle
+		DFEVar carriedSum = floatType.newInstance(this);
+		DFEVar sum = y === 0 ? 0.0 : carriedSum;
+
+		DFEVar newSum = input*inVector+sum;
+
+		carriedSum <== stream.offset(newSum, n.cast(dfeInt(32))*-1, -nMax, -16);
+
+		// We have a controlled output to deliver the sum at the end of each column
+		io.output("output", newSum, floatType, y === (n-1));
+	}
+}

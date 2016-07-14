@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<maxCompilerManager version="2">
+<enginePart internalEngineSubproject="TransposedLMem_EngineCode" isSrcBin="false" isUseDefaultSelected="false" outputLocation="/TransposedLMem_EngineCode/bin" projectName="TransposedLMem"/>
+<cpuPart internalCpuSubproject="TransposedLMem_CPUCode"/>
+<watchedFiles/>
+</maxCompilerManager>
