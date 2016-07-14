@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete 9 resources" deleteContents="true" description="Delete 9 resources" element1="/AMultiplyMatrixMatrixTile_EngineCode" element2="/AMultiplyMatrixMatrixTile_CPUCode" element3="/AMultiplyMatrixMatrixTile_RunRules" element4="/TiledVec_EngineCode" element5="/TiledVec_CPUCode" element6="/TiledVec_RunRules" element7="/TiledVecLMem_EngineCode" element8="/TiledVecLMem_CPUCode" element9="/TiledVecLMem_RunRules" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="9" stamp="1468487726274"/>
-</session>

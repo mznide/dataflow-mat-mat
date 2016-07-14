@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;TransposedVec_CPUCode/MultiplyMatrixMatrixAcceleratedCpuCode.c&apos; to &apos;TransposedVecCpuCode.c&apos;" description="Rename resource &apos;MultiplyMatrixMatrixAcceleratedCpuCode.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="MultiplyMatrixMatrixAcceleratedCpuCode.c" name="TransposedVecCpuCode.c" stamp="1468511227425" updateReferences="true"/>
-</session>

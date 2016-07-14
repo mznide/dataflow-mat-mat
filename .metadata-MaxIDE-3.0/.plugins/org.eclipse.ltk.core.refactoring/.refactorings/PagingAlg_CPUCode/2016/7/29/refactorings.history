@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;PagingAlg_CPUCode/MultiplyMatrixMatrixCpuCode.c&apos; to &apos;PagingAlgCpuCode.c&apos;" description="Rename resource &apos;MultiplyMatrixMatrixCpuCode.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="MultiplyMatrixMatrixCpuCode.c" name="PagingAlgCpuCode.c" stamp="1468528991289" updateReferences="true"/>
-</session>

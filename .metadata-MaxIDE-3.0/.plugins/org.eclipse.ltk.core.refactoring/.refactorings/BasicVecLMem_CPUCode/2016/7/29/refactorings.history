@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;BasicVecLMem_CPUCode/MultiplyMatrixMatrixBasicCpuCode.c&apos; to &apos;BasicVecLMemCpuCode.c&apos;" description="Rename resource &apos;MultiplyMatrixMatrixBasicCpuCode.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="MultiplyMatrixMatrixBasicCpuCode.c" name="BasicVecLMemCpuCode.c" stamp="1468494688506" updateReferences="true"/>
-</session>
