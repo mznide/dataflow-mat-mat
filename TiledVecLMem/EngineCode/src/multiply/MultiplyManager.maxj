@@ -15,8 +15,8 @@ import com.maxeler.maxcompiler.v2.managers.standard.Manager;
 
 class MultiplyManager{
 
-	static final int nMax = 30*1024;
-	static final int vectorSize = 4;
+	static final int nMax = 20*1024;
+	static final int vectorSize = 24;
 	static final int C = 16;
 
 	private static final CPUTypes FLOAT_TYPE = CPUTypes.FLOAT;

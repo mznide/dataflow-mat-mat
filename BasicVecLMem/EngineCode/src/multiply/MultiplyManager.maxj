@@ -16,8 +16,7 @@ class MultiplyManager{
 	static final int nMax = 20*1024;
 	private static final CPUTypes FLOAT_TYPE = CPUTypes.FLOAT;
 
-	//works only on vectors 12,24
-	static final int vectorSize = 4;
+	static final int vectorSize = 24;
 
 	public static void main(String[] args) {
 		Manager manager = new Manager(new EngineParameters(args));

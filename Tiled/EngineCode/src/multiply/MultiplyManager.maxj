@@ -11,7 +11,7 @@ import com.maxeler.maxcompiler.v2.managers.standard.Manager.IOType;
 
 class MultiplyManager{
 
-	static final int nMax = 30*1024;
+	static final int nMax = 20*1024;
 
 	//loop tiling - to make offset smaller
 	static final int C = 16;
