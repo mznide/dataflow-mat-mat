@@ -26,7 +26,7 @@ int n = 32;
 	1 - prints input, output, final result
 	2 - tests correctness of result and prints if test passed
 */
-int trace = 2;
+int trace = 0;
 
 // elements of matrix are in -range  to +range interval
 float range = 100.0;

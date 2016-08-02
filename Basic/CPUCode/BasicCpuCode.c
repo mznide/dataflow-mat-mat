@@ -164,6 +164,7 @@ int main(int argc, char * argv[])
 	free(mat_b_trans);
 	free(output);
 	free(expected);
+	free(output_trans);
 
 	return status;
 }

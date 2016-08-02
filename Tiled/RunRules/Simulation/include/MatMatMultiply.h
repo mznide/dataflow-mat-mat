@@ -7,7 +7,7 @@ extern "C" {
 #endif /* __cplusplus */
 
 #define MatMatMultiply_PCIE_ALIGNMENT (16)
-#define MatMatMultiply_C (16)
+#define MatMatMultiply_C (32)
 
 
 /*----------------------------------------------------------------------------*/

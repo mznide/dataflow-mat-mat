@@ -8,7 +8,7 @@ extern "C" {
 
 #define MatMatMultiply_PCIE_ALIGNMENT (16)
 #define MatMatMultiply_C (16)
-#define MatMatMultiply_vectorSize (32)
+#define MatMatMultiply_vectorSize (24)
 
 
 /*----------------------------------------------------------------------------*/
