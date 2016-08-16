@@ -20,7 +20,7 @@
 int help_flag = 0;
 
 // number of rows / columns. Matrix size is n*n
-int n = 512;
+int n = 128;
 #define ALIGN_BURST		384
 #define C MatMatMultiply_C
 
