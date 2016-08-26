@@ -24,11 +24,10 @@ function prepare {
 
 cd ..
 
-print_settings
 echo
 
 prepare
 
-print_settings
+
 
 exit 0
