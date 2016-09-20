@@ -7,9 +7,9 @@ function print_settings {
 
 function prepare {
 
-	n=64
+	n=448
 	src=PagingAlg
-	while (( n <= 384 )); do
+	while (( n <= 448 )); do
 		dst=PagingAlg$n
 		cp -r $src $dst
 		f=$(egrep -r "tileSize = " $dst | cut -d: -f1)
